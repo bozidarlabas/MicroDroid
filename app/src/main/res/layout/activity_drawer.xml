@@ -13,10 +13,13 @@
             android:id="@+id/app_bar"
             layout="@layout/micro_app_bar" />
 
-        <com.bozidar.microdroid.slidingtab.layout.SlidingTabLayout
+        <com.rey.material.widget.TabPageIndicator
+            style="@style/TabPageIndicator"
             android:id="@+id/tabs"
+            android:layout_height="48dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:clipToPadding="false"
+            android:background="?attr/colorPrimary" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pagermy"

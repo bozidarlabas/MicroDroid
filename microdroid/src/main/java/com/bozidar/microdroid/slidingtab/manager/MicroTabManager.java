@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 
 import com.bozidar.microdroid.slidingtab.adapter.MicroPagerAdapter;
 import com.bozidar.microdroid.slidingtab.fragment.MicroTabFrag;
-import com.bozidar.microdroid.slidingtab.layout.SlidingTabLayout;
+import com.rey.material.widget.TabPageIndicator;
 
 /**
  * Created by bozidar on 24.04.15..
@@ -15,9 +15,9 @@ public class MicroTabManager {
     private FragmentManager fragmentManager;
     private MicroPagerAdapter microPagerAdapter;
     private ViewPager viewPager;
-    private SlidingTabLayout slidingTabLayout;
+    private TabPageIndicator slidingTabLayout;
 
-    public MicroTabManager(FragmentManager fragmentManager, ViewPager viewPager,  SlidingTabLayout slidingTabLayout){
+    public MicroTabManager(FragmentManager fragmentManager, ViewPager viewPager,  TabPageIndicator slidingTabLayout){
         this.fragmentManager = fragmentManager;
         this.viewPager = viewPager;
         this.slidingTabLayout = slidingTabLayout;
