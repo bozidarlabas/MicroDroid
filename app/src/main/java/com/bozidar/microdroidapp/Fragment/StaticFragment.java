@@ -1,0 +1,20 @@
+package com.bozidar.microdroidapp.Fragment;
+
+import com.bozidar.microdroid.base.MicroFragment;
+import com.bozidar.microdroidapp.R;
+
+/**
+ * Created by bozidar on 19.04.15..
+ */
+public class StaticFragment extends MicroFragment {
+
+    @Override
+    public int setLayoutResource() {
+        return R.layout.fragment_static;
+    }
+
+    @Override
+    public void init() {
+
+    }
+}
