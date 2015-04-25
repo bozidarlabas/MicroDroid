@@ -1,1 +1,1 @@
-include ':microdroid', ':app', ':material'
+include ':microdroid', ':app', ':material', ':util'

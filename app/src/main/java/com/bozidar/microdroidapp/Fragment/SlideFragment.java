@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.bozidar.microdroidapp.R;
-import com.bozidar.microdroid.slidingtab.fragment.MicroTabFrag;
+import com.bozidar.microdroid.slidingtab.fragment.MicroTabFragment;
 
 import butterknife.InjectView;
 
 
-public class SlideFragment extends MicroTabFrag {
+public class SlideFragment extends MicroTabFragment {
 
     @InjectView(R.id.tvSlide)
     TextView tvSlide;

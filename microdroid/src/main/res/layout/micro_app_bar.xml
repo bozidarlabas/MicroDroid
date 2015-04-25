@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="56dp"
     android:background="@color/primaryColor"
-    app:theme="@style/MicroToolbar">
+    app:theme="@style/MicroToolbar"
+    android:elevation="4dp">
 
 </android.support.v7.widget.Toolbar>

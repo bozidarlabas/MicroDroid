@@ -1,40 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:orientation="vertical">
+    android:layout_height="@dimen/height72dp"
+    android:paddingEnd="@dimen/pad16dp"
+    android:paddingLeft="@dimen/pad16dp"
+    android:paddingRight="@dimen/pad16dp"
+    android:paddingStart="@dimen/pad16dp">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="@dimen/width40dp"
+        android:layout_height="@dimen/height40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="@dimen/marg16dp"
+        android:layout_marginEnd="@dimen/marg16dp"
+        android:layout_marginRight="@dimen/marg16dp"
+        android:layout_marginTop="@dimen/marg16dp"
+        android:clickable="false"
+        android:elevation="1dp"
+        android:src="@drawable/icon_compas" />
+
 
     <LinearLayout
-        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_centerInParent="true"
+        android:layout_toEndOf="@id/ivIcon"
+        android:layout_toRightOf="@id/ivIcon"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/ivIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:padding="8dp"
-            android:src="@drawable/icon_compas" />
 
         <TextView
+            android:textStyle="bold"
             android:id="@+id/tvList"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:padding="8dp"
-            android:text="@string/app_name"
-            android:textColor="#000000" />
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical|left"
+            android:lines="1"
+            android:singleLine="true"
+            android:text="Some drawer text"
+            android:textSize="@dimen/text14sp" />
+
     </LinearLayout>
 
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@color/divider" />
-
-</LinearLayout>
+</RelativeLayout>
