@@ -25,7 +25,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:contentDescription="@string/material_design"

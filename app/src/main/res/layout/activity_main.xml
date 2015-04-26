@@ -9,8 +9,9 @@
         android:id="@+id/app_bar"
         layout="@layout/micro_app_bar" />
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/layout"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/app_bar"
@@ -24,7 +25,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <com.rey.material.widget.Button
+            android:id="@+id/btnDrawerActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="1dp"
+            android:text="Go to DrawerActivity"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textColor="#FFFFFFFF"
+            app:delayClick="true"
+            app:ripple="@style/RaiseColorButtonRippleStyle" />
+
         <fragment
+            android:layout_marginBottom="5dp"
             android:id="@+id/fragment2"
             android:name="com.bozidar.microdroidapp.Fragment.StaticFragment"
             android:layout_width="wrap_content"
@@ -34,23 +50,10 @@
             android:layout_below="@id/mylayout"
             android:layout_marginTop="10dp"
             tools:layout="@layout/fragment_static" />
-    </RelativeLayout>
+    </LinearLayout>
 
 
-    <com.rey.material.widget.Button
-        android:layout_alignParentBottom="true"
-        android:id="@+id/btnDrawerActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="1dp"
-        android:text="Go to DrawerActivity"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
-        android:textColor="#FFFFFFFF"
-        app:delayClick="true"
-        app:ripple="@style/RaiseColorButtonRippleStyle" />
+
 
 
 </RelativeLayout>
