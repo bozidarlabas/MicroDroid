@@ -16,27 +16,27 @@ import java.util.List;
  */
 public class MicroSimpleRecyclerView implements MicroRecyclerAPI {
 
-    private int recyclerViewLayoutRes;
     private List<MicroSimpleModel> data;
     private RecyclerView recyclerView;
     private MicroRecyclerAdapter microRecyclerAdapter;
     private Context context;
+    private final String viewTag = "SimpleList";
 
     //TODO send parameters through constructor
-    public MicroSimpleRecyclerView(RecyclerView recyclerView, List<MicroSimpleModel> data, Context context){
+    public MicroSimpleRecyclerView(RecyclerView recyclerView, List<MicroSimpleModel> data, Context context) {
         this.data = data;
         this.context = context;
         this.recyclerView = recyclerView;
     }
 
     @Override
-    public void createRecyclerView(){
-        microRecyclerAdapter = new MicroRecyclerAdapter(context, R.layout.drawer_item, data);
+    public void createRecyclerView() {
+        microRecyclerAdapter = new MicroRecyclerAdapter(context, R.layout.drawer_item, data, viewTag);
         recyclerView.setAdapter(microRecyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         //check if user has implement onMicroItemClickListener in activity
-        if(context instanceof MicroRecyclerAdapter.onMicroItemCLickListener)
+        if (context instanceof MicroRecyclerAdapter.onMicroItemCLickListener)
             microRecyclerAdapter.setOnMicroCLickListener((MicroRecyclerAdapter.onMicroItemCLickListener) context);
     }
 

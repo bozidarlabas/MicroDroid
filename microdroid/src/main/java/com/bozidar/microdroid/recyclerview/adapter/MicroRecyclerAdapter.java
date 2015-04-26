@@ -21,12 +21,18 @@ public class MicroRecyclerAdapter extends RecyclerView.Adapter<MicroViewHolder> 
     private int layoutResource;
     private List<MicroSimpleModel> data = Collections.emptyList();
     private onMicroItemCLickListener listener;
+    private String viewTag;
 
-    public MicroRecyclerAdapter(Context context, int layoutResource, List<MicroSimpleModel> data) {
+    public MicroRecyclerAdapter(Context context, int layoutResource, List<MicroSimpleModel> data, String viewTag) {
         listener = null;
         this.context = context;
         this.data = data;
+        this.viewTag = viewTag;
         this.layoutResource = layoutResource;
+    }
+
+    private boolean checkViewTag(String viewTag){
+        return this.viewTag.equals(viewTag);
     }
 
     /**
@@ -39,7 +45,7 @@ public class MicroRecyclerAdapter extends RecyclerView.Adapter<MicroViewHolder> 
     @Override
     public MicroViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(layoutResource, parent, false);
-        return new MicroViewHolder(v, listener);
+        return new MicroViewHolder(v, listener, viewTag);
     }
 
     /**
@@ -52,6 +58,10 @@ public class MicroRecyclerAdapter extends RecyclerView.Adapter<MicroViewHolder> 
     public void onBindViewHolder(MicroViewHolder holder, int position) {
         MicroSimpleModel currentObject = data.get(position);
         holder.title.setText(currentObject.getText());
+        if(holder.viewTag.equals("DetailedList"))
+            holder.description.setText("asdas");
+      //  if(checkViewTag(this.viewTag))
+         //   holder.description.setText("asdas");
         //holder.icon.setImageResource(currentObject.iconId);
     }
 
