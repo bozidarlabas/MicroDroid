@@ -7,7 +7,7 @@
 
     <dimen name="marg16dp">16dp</dimen>
 
-    <dimen name="height72dp">72dp</dimen>
+    <dimen name="height48dp">48dp</dimen>
     <dimen name="width40dp">40dp</dimen>
     <dimen name="height40dp">40dp</dimen>
 

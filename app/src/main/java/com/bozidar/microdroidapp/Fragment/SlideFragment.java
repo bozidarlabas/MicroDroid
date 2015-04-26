@@ -1,18 +1,23 @@
 package com.bozidar.microdroidapp.Fragment;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
-import com.bozidar.microdroidapp.R;
+import com.bozidar.microdroid.recyclerview.api.MicroRecyclerAPI;
+import com.bozidar.microdroid.recyclerview.manager.MicroRecyclerManager;
+import com.bozidar.microdroid.recyclerview.model.MicroSimpleModel;
 import com.bozidar.microdroid.slidingtab.fragment.MicroTabFragment;
+import com.bozidar.microdroidapp.R;
 
-import butterknife.InjectView;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class SlideFragment extends MicroTabFragment {
 
-    @InjectView(R.id.tvSlide)
-    TextView tvSlide;
+
 
     public static SlideFragment getInstance(String tabTitle){
         SlideFragment fragment= new SlideFragment();
@@ -37,9 +42,34 @@ public class SlideFragment extends MicroTabFragment {
     public void init() {
         Bundle bundle = getArguments();
         if (bundle != null) {
-            //Do something
+
         }
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setRecyclerView(view);
+    }
+
+    private void setRecyclerView(View v){
+        RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.drawertest);
+        MicroRecyclerManager manager = MicroRecyclerManager.Builder().setInformation(recyclerView, getData(), getMicroActivity());
+        MicroRecyclerAPI api = manager.buildDetailRecyclerView();
+        api.createRecyclerView();
+    }
+
+    public static List<MicroSimpleModel> getData() {
+        List<MicroSimpleModel> data = new ArrayList<>();
+        int[] icons = {com.bozidar.microdroid.R.drawable.abc_btn_rating_star_on_mtrl_alpha, com.bozidar.microdroid.R.drawable.abc_btn_rating_star_on_mtrl_alpha, com.bozidar.microdroid.R.drawable.abc_btn_rating_star_on_mtrl_alpha};
+        String[] titles = {"Tab Activity", "Second", "Third title"};
+        for (int i = 0; i < titles.length && i < icons.length; i++) {
+            MicroSimpleModel info = new MicroSimpleModel();
+            info.setText(titles[i]);
+            info.setImageResource(icons[i]);
+            data.add(info);
+        }
+        return data;
+    }
 
 }

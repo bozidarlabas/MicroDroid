@@ -42,7 +42,7 @@ public class DrawerActivity extends MicroDrawerActivity implements MicroRecycler
 
     @Override
     public int setupHeaderImageRes() {
-        return R.drawable.header;
+        return R.drawable.header_micro;
     }
 
     @Override

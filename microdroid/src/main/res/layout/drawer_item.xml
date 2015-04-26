@@ -1,47 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/height72dp"
-    android:paddingEnd="@dimen/pad16dp"
-    android:paddingLeft="@dimen/pad16dp"
-    android:paddingRight="@dimen/pad16dp"
-    android:paddingStart="@dimen/pad16dp">
+    android:layout_height="48dp">
 
     <ImageView
         android:id="@+id/ivIcon"
-        android:layout_width="@dimen/width40dp"
-        android:layout_height="@dimen/height40dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="@dimen/marg16dp"
-        android:layout_marginEnd="@dimen/marg16dp"
-        android:layout_marginRight="@dimen/marg16dp"
-        android:layout_marginTop="@dimen/marg16dp"
-        android:clickable="false"
-        android:elevation="1dp"
-        android:src="@drawable/icon_compas" />
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:alpha="0.54"
+        android:src="@drawable/ic_star_black_24dp" />
 
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_toEndOf="@id/ivIcon"
-        android:layout_toRightOf="@id/ivIcon"
-        android:orientation="vertical">
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/ivIcon"
+        android:layout_toRightOf="@+id/ivIcon"
+        android:alpha="0.87"
+        android:text="lasldalsdla"
+        android:textColor="#000000"
+        android:textSize="14dp" />
 
-
-        <TextView
-            android:textStyle="bold"
-            android:id="@+id/tvList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center_vertical|left"
-            android:lines="1"
-            android:singleLine="true"
-            android:text="Some drawer text"
-            android:textSize="@dimen/text14sp" />
-
-    </LinearLayout>
 
 </RelativeLayout>

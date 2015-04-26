@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="MicroTypefacedTextView">
+        <attr name="microtypeface" format="string" />
+    </declare-styleable>
+</resources>
