@@ -47,4 +47,8 @@ public class MicroRecyclerManager {
         return new MicroDetailRecyclerView(recyclerView, data, context);
     }
 
+
+
+
+
 }

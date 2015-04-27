@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bozidar.microdroid.slidingtab.adapter.MicroPagerAdapter;
+
 import butterknife.ButterKnife;
 
 /**
@@ -22,6 +24,7 @@ public abstract class MicroFragment extends Fragment {
 
     private Activity parentActivity;
     private Bundle savedInstanceState;
+    public MicroPagerAdapter microPagerAdapter;
 
     /**
      * OnAttach is called after Fragment is associated with is Activity
@@ -161,6 +164,10 @@ public abstract class MicroFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         Log.d("fragment", "onDetach");
+    }
+
+    public void setMicroAdapter(MicroPagerAdapter microPagerAdapter){
+        this.microPagerAdapter = microPagerAdapter;
     }
 
     public MicroActivity getMicroActivity() {

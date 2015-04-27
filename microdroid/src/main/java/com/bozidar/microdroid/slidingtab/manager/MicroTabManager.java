@@ -28,6 +28,10 @@ public class MicroTabManager {
         main();
     }
 
+    public MicroPagerAdapter getMicroAdapter(){
+        return this.microPagerAdapter;
+    }
+
     /**
      * Main method which will be called from constructor
      */

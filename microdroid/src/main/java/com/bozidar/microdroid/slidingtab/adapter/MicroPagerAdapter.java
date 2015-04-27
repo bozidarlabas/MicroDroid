@@ -33,6 +33,7 @@ public class MicroPagerAdapter extends FragmentPagerAdapter {
      * @param <MicroTab> Base class for tab fragments
      */
     public <MicroTab extends MicroTabFragment> void addTab(MicroTab tab) {
+        tab.setMicroAdapter(this);
         this.fragments.add(tab);
         this.notifyDataSetChanged();
     }

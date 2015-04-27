@@ -4,19 +4,24 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.bozidar.microdroid.recyclerview.api.MicroRecyclerAPI;
 import com.bozidar.microdroid.recyclerview.manager.MicroRecyclerManager;
 import com.bozidar.microdroid.recyclerview.model.MicroSimpleModel;
 import com.bozidar.microdroid.slidingtab.fragment.MicroTabFragment;
 import com.bozidar.microdroidapp.R;
+import com.bozidar.microdroidapp.SortListener;
+import com.bozidar.microdroidapp.Sorter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class SlideFragment extends MicroTabFragment {
+public class SlideFragment extends MicroTabFragment implements SortListener{
 
+    private Sorter sorter;
+    private List<MicroSimpleModel> data;
 
 
     public static SlideFragment getInstance(String tabTitle){
@@ -25,6 +30,10 @@ public class SlideFragment extends MicroTabFragment {
         args.putString("title", tabTitle);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    public SlideFragment(){
+        sorter = new Sorter();
     }
 
 
@@ -53,8 +62,9 @@ public class SlideFragment extends MicroTabFragment {
     }
 
     private void setRecyclerView(View v){
+        data = getData();
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.drawertest);
-        MicroRecyclerManager manager = MicroRecyclerManager.Builder().setInformation(recyclerView, getData(), getMicroActivity());
+        MicroRecyclerManager manager = MicroRecyclerManager.Builder().setInformation(recyclerView, data, getMicroActivity());
         MicroRecyclerAPI api = manager.buildDetailRecyclerView();
         api.createRecyclerView();
     }
@@ -63,13 +73,27 @@ public class SlideFragment extends MicroTabFragment {
         List<MicroSimpleModel> data = new ArrayList<>();
         int[] icons = {com.bozidar.microdroid.R.drawable.abc_btn_rating_star_on_mtrl_alpha, com.bozidar.microdroid.R.drawable.abc_btn_rating_star_on_mtrl_alpha, com.bozidar.microdroid.R.drawable.abc_btn_rating_star_on_mtrl_alpha};
         String[] titles = {"Tab Activity", "Second", "Third title"};
-        for (int i = 0; i < titles.length && i < icons.length; i++) {
+        for (int i = 0; i < 50; i++) {
             MicroSimpleModel info = new MicroSimpleModel();
-            info.setText(titles[i]);
-            info.setImageResource(icons[i]);
+            info.setText(titles[i%2]);
+            info.setImageResource(icons[i%2]);
             data.add(info);
         }
         return data;
     }
 
+    @Override
+    public void onSortByName() {
+        Toast.makeText(getMicroActivity(), data.get(0).getText(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onSortByDate() {
+
+    }
+
+    @Override
+    public void onSortByRating() {
+
+    }
 }
