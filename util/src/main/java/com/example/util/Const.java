@@ -1,4 +1,4 @@
-package com.bozidar.util;
+package com.example.util;
 
 /**
  * Created by bozidar on 26.04.15..

@@ -1,19 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TextView
+    android:id="@+id/tvSlide"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context="com.bozidar.microdroid.drawer.MicroFragmentDrawer">
-
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/drawertest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
-
-
-
-</LinearLayout>
+    android:textColor="@color/textColorPrimary"
+    android:textSize="20sp"
+    android:gravity="center" />

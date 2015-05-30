@@ -1,46 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:com.bozidar.util="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.bozidar.microdroidapp.probaFragment">
 
-    <ScrollView
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.bozidar.util.MicroTextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MicroDroid is a write less, do more android library. It helps developers to spend more time on business logic and less time on standard android tasks like ReclycerView, navigation drawer, tab layout, etc. Besides that, this library provides material design for older devices."
-                android:textSize="@dimen/txt15sp"
-                com.bozidar.util:microtypeface="fonts/Roboto-Medium.ttf" />
-
-            <com.bozidar.util.MicroTextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:text="What is material design?"
-                android:textSize="@dimen/txt15sp"
-                com.bozidar.util:microtypeface="fonts/Roboto-Bold.ttf" />
-
-            <com.bozidar.util.MicroTextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material design is a new visual look coming to replace Holo."
-                android:textSize="@dimen/txt15sp"
-                com.bozidar.util:microtypeface="fonts/Roboto-Medium.ttf" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+</FrameLayout>

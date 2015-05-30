@@ -19,8 +19,6 @@ public class MainActivity extends MicroActivity {
         setFragment(R.id.mylayout, new DinamicFragment());
     }
 
-
-
     @Override
     public int setupToolbar() {
         return R.id.app_bar;

@@ -96,11 +96,11 @@ public class MicroFragmentDrawer extends MicroFragment{
     public static List<MicroSimpleModel> getData() {
         List<MicroSimpleModel> data = new ArrayList<>();
         int[] icons = {R.drawable.abc_btn_rating_star_on_mtrl_alpha, R.drawable.abc_btn_rating_star_on_mtrl_alpha, R.drawable.abc_btn_rating_star_on_mtrl_alpha};
-        String[] titles = {"Tab Activity", "Second", "Third title"};
-        for (int i = 0; i < 50; i++) {
+        String[] titles = {"First title", "Second", "Third title"};
+        for (int i = 0; i < titles.length && i < icons.length; i++) {
             MicroSimpleModel info = new MicroSimpleModel();
-            info.setText(titles[i%2]);
-            info.setImageResource(icons[i%3]);
+            info.setText(titles[i]);
+            info.setImageResource(icons[i]);
             data.add(info);
         }
         return data;

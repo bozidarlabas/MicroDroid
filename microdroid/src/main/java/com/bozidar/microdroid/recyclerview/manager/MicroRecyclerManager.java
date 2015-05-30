@@ -13,10 +13,10 @@ import java.util.List;
  */
 
 public class MicroRecyclerManager {
-
+    private int recyclerViewLayoutRes;
     private List<MicroSimpleModel> data;
     private Context context;
-    private RecyclerView recyclerView;
+    RecyclerView recyclerView;
 
     private static MicroRecyclerManager manager;
 
@@ -42,13 +42,9 @@ public class MicroRecyclerManager {
         return new MicroSimpleRecyclerView(recyclerView, data, context);
     }
 
-
-    public MicroDetailRecyclerView buildDetailRecyclerView() {
+    //TODO return new MicroAdvancedRecyclerView
+    public MicroRecyclerAPI buildAdvancedREcyclerView() {
         return new MicroDetailRecyclerView(recyclerView, data, context);
     }
-
-
-
-
 
 }

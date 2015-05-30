@@ -4,8 +4,4 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">Static fragment</string>
-    <string name="title_activity_tab">TabActivity</string>
-    <string name="material_design">Material design</string>
-    <string name="title_activity_splash">SplashActivity</string>
-    <string name="NavigationDrawerSection">The navigation drawer is a common pattern found in Google apps. The navigation drawer slides in from the left. It follows the keylines and metrics for lists.\nMicroDroid framework provides MicroDrawerActivity abstract class. If user wants drawer inside activity it simply extend this class and provide abstract methods with desired layout resources.</string>
 </resources>

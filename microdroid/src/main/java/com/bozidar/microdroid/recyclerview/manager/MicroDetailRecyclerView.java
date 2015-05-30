@@ -12,10 +12,9 @@ import com.bozidar.microdroid.recyclerview.model.MicroSimpleModel;
 import java.util.List;
 
 /**
- * Created by bozidar on 21.04.15..
+ * Created by bozidar on 09.05.15..
  */
-public class MicroSimpleRecyclerView implements MicroRecyclerAPI {
-
+public class MicroDetailRecyclerView implements MicroRecyclerAPI {
     private int recyclerViewLayoutRes;
     private List<MicroSimpleModel> data;
     private RecyclerView recyclerView;
@@ -23,7 +22,7 @@ public class MicroSimpleRecyclerView implements MicroRecyclerAPI {
     private Context context;
 
     //TODO send parameters through constructor
-    public MicroSimpleRecyclerView(RecyclerView recyclerView, List<MicroSimpleModel> data, Context context){
+    public MicroDetailRecyclerView(RecyclerView recyclerView, List<MicroSimpleModel> data, Context context){
         this.data = data;
         this.context = context;
         this.recyclerView = recyclerView;
@@ -39,5 +38,4 @@ public class MicroSimpleRecyclerView implements MicroRecyclerAPI {
         if(context instanceof MicroRecyclerAdapter.onMicroItemCLickListener)
             microRecyclerAdapter.setOnMicroCLickListener((MicroRecyclerAdapter.onMicroItemCLickListener) context);
     }
-
 }

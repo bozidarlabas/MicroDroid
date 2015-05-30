@@ -1,4 +1,4 @@
-package com.bozidar.util;
+package com.example.util;
 
 import android.content.Context;
 import android.content.res.TypedArray;
