@@ -9,34 +9,50 @@ import com.bozidar.microdroid.recyclerview.model.MicroSimpleModel;
 import java.util.List;
 
 /**
+ * Builder pattern
+ * This class represents manager for creating recycler view
  * Created by bozidar on 21.04.15..
  */
 
 public class MicroRecyclerManager {
-    private int recyclerViewLayoutRes;
-    private List<MicroSimpleModel> data;
-    private Context context;
-    RecyclerView recyclerView;
+    private final List<MicroSimpleModel> data;
+    private final Context context;
+    private final RecyclerView recyclerView;
 
-    private static MicroRecyclerManager manager;
 
-    public static MicroRecyclerManager Builder() {
-        if(manager == null){
-            return manager = new MicroRecyclerManager();
+    public static class Builder{
+        //Required parameter
+        private final Context context;
+
+        //Other parameters
+        private List<MicroSimpleModel> data;
+        private RecyclerView recyclerView;
+
+        public Builder(Context context){
+            this.context = context;
         }
-        return manager;
+
+        public Builder data(List<MicroSimpleModel> data){
+            this.data = data;
+            return this;
+        }
+
+        public Builder recyclerView(RecyclerView recyclerView){
+            this.recyclerView = recyclerView;
+            return this;
+        }
+
+        public MicroRecyclerManager build(){
+            return new MicroRecyclerManager(this);
+        }
     }
 
-    public MicroRecyclerManager build(){
-        return manager;
+    private MicroRecyclerManager(Builder builder){
+        this.data = builder.data;
+        this.context = builder.context;
+        this.recyclerView = builder.recyclerView;
     }
 
-    public MicroRecyclerManager setInformation(RecyclerView recyclerView, List<MicroSimpleModel> data, Context context){
-        this.data = data;
-        this.context = context;
-        this.recyclerView = recyclerView;
-        return build();
-    }
 
     public MicroRecyclerAPI buildSimpleRecyclerView() {
         return new MicroSimpleRecyclerView(recyclerView, data, context);

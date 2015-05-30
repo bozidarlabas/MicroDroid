@@ -35,7 +35,7 @@ public class MicroSimpleRecyclerView implements MicroRecyclerAPI {
         recyclerView.setAdapter(microRecyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-        //check if user has implement onMicroItemClickListener in activity
+        //Check if user has implement onMicroItemClickListener in activity
         if(context instanceof MicroRecyclerAdapter.onMicroItemCLickListener)
             microRecyclerAdapter.setOnMicroCLickListener((MicroRecyclerAdapter.onMicroItemCLickListener) context);
     }

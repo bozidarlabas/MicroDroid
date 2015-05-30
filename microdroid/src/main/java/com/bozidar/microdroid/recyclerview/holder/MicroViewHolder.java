@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bozidar.microdroid.R;
+import com.bozidar.microdroid.recyclerview.adapter.MicroRecyclerAdapter;
 
 /**
  * Created by bozidar on 20.04.15..
@@ -19,7 +20,7 @@ public class MicroViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
 
 
-    public MicroViewHolder(View itemView, com.bozidar.microdroid.recyclerview.adapter.MicroRecyclerAdapter.onMicroItemCLickListener listener) {
+    public MicroViewHolder(View itemView, MicroRecyclerAdapter.onMicroItemCLickListener listener) {
         super(itemView);
         this.listener = listener;
         this.title = (TextView) itemView.findViewById(R.id.tvList);

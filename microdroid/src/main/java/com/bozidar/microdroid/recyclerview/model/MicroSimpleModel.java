@@ -24,8 +24,4 @@ public class MicroSimpleModel {
     public void setImageResource(int imageResource) {
         this.imageResource = imageResource;
     }
-
-
-
-
 }

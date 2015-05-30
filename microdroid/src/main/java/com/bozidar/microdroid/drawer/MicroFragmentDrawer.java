@@ -52,9 +52,8 @@ public class MicroFragmentDrawer extends MicroFragment{
 
     private void setUpRecyclerView(View view) {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.drawerlist);
-        MicroRecyclerManager recyclerManager = MicroRecyclerManager.Builder().
-                setInformation(recyclerView, getData(), getMicroActivity());
-        MicroRecyclerAPI recyclerAPI = recyclerManager.buildSimpleRecyclerView();
+        MicroRecyclerManager manager = new MicroRecyclerManager.Builder(getMicroActivity()).data(getData()).recyclerView(recyclerView).build();
+        MicroRecyclerAPI recyclerAPI = manager.buildSimpleRecyclerView();
         recyclerAPI.createRecyclerView();
     }
 
